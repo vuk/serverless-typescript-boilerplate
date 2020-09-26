@@ -1,0 +1,53 @@
+service:
+  name: home-backend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 1024
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  stackName: ${self:service.name}-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET_NAME}/*"
+      Action:
+        - s3:PutObject
+        - s3:PutObjectAcl
+        - s3:GetObject
+        - s3:DeleteObject
+  httpApi:
+    cors: true
+  environment:
+    STAGE: ${self:provider.stage}
+    S3_BUCKET_NAME: ${self:custom.bucketName}-${self:provider.stage}
+
+custom:
+  bucketName: ${opt:bucketName, 'home-assets-bucket'}
+  corsOriginPattern: "*"
+  prune:
+    automatic: true
+    number: 5
+  webpack:
+    webpackConfig: "webpack.config.js"
+    includeModules: true
+    packager: "npm"
+    excludeFiles: __tests__/
+
+plugins:
+  - serverless-webpack
+  - serverless-prune-plugin
+  - serverless-offline
+
+functions:
+  info:
+    handler: src/functions/info.handler
+    memorySize: 128
+    events:
+      - http:
+          method: GET
+          path: /info
+          cors:
+            origin: ${self:custom.corsOriginPattern}
+
+resources: ${file(resources/resources.yml)}

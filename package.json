@@ -1,0 +1,105 @@
+{
+  "name": "serverless-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "Serverless Typescript Boilerplate",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "release": "standard-version --tag-prefix=''",
+    "release:dry-run": "standard-version --tag-prefix='' --dry-run",
+    "format": "prettier --write \"**/*.ts \"",
+    "format:staged": "pretty-quick --staged",
+    "clean": "rimraf dist coverage",
+    "clean:deps": "rimraf node_modules"
+  },
+  "author": {
+    "email": "me@vukstankovic.com",
+    "name": "Vuk Stankovic",
+    "url": "https://vukstankovic.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@contentful/rich-text-types": "^14.1.1",
+    "@types/hapi__joi": "^17.1.5",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "aws-sdk": "^2.761.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.0.2",
+    "rimraf": "^3.0.2",
+    "serverless": "^2.3.0",
+    "serverless-offline": "^6.8.0",
+    "serverless-prune-plugin": "^1.4.3",
+    "serverless-webpack": "^5.3.5",
+    "standard-version": "^8.0.2",
+    "ts-jest": "^26.4.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1"
+  },
+  "jest": {
+    "rootDir": "./",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/functions/",
+      "<rootDir>/*.module.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/functions/",
+      "<rootDir>/*.module.ts"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s test lint",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
