@@ -10,3 +10,8 @@ Boilerplate for Serverless projects with Typescript support
 * Pre-commit hook - [Husky](https://github.com/typicode/husky#readme)
 * [Serverless framework](http://serverless.com/)
 * [Serverless offline](https://github.com/dherault/serverless-offline)
+* Changelog and release management 
+
+## Changelog
+
+[Changelog](./CHANGELOG.md) is generated automatically
