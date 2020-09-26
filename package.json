@@ -25,6 +25,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@contentful/rich-text-types": "^14.1.1",
     "@types/hapi__joi": "^17.1.5",
+    "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "aws-sdk": "^2.761.0",
@@ -93,7 +94,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test && npm run lint lint",
+      "pre-commit": "npm run test && npm run lint",
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
   },
