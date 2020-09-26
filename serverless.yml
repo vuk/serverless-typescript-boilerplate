@@ -1,5 +1,5 @@
 service:
-  name: home-backend
+  name: serverless-typescript-boilerplate
 
 provider:
   name: aws
@@ -8,14 +8,6 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   stackName: ${self:service.name}-${self:provider.stage}
-  iamRoleStatements:
-    - Effect: "Allow"
-      Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET_NAME}/*"
-      Action:
-        - s3:PutObject
-        - s3:PutObjectAcl
-        - s3:GetObject
-        - s3:DeleteObject
   httpApi:
     cors: true
   environment:
