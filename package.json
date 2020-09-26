@@ -1,6 +1,6 @@
 {
   "name": "serverless-typescript-boilerplate",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Serverless Typescript Boilerplate",
   "main": "index.ts",
   "scripts": {
