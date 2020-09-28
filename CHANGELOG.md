@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.2...1.2.3) (2020-09-28)
+
+
+### Bug Fixes
+
+* change test file template ([76f503a](https://github.com/vuk/serverless-typescript-boilerplate/commit/76f503a9ddd0b8b505cf0d3288c16d8212703198))
+
 ### [1.2.2](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.1...1.2.2) (2020-09-26)
 
 
