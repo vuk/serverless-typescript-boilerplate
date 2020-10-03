@@ -12,7 +12,8 @@
     "format": "prettier --write \"**/*.ts \"",
     "format:staged": "pretty-quick --staged",
     "clean": "rimraf dist coverage",
-    "clean:deps": "rimraf node_modules"
+    "clean:deps": "rimraf node_modules",
+    "start:offline": "sls offline"
   },
   "author": {
     "email": "me@vukstankovic.com",
