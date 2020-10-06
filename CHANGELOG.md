@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.5](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.4...1.2.5) (2020-10-06)
+
+
+### Bug Fixes
+
+* change eslint parser ([418753b](https://github.com/vuk/serverless-typescript-boilerplate/commit/418753bc096deb8d1a1f20c8183a90bfe343f0e5))
+
 ### [1.2.4](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.3...1.2.4) (2020-10-03)
 
 
