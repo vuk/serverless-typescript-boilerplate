@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.5...1.2.6) (2020-10-06)
+
+
+### Bug Fixes
+
+* remove unused bucket name ([caa3b1f](https://github.com/vuk/serverless-typescript-boilerplate/commit/caa3b1fc92af3080d74e99b6b47c0c1a10f59956))
+
 ### [1.2.5](https://github.com/vuk/serverless-typescript-boilerplate/compare/1.2.4...1.2.5) (2020-10-06)
 
 
