@@ -12,10 +12,8 @@ provider:
     cors: true
   environment:
     STAGE: ${self:provider.stage}
-    S3_BUCKET_NAME: ${self:custom.bucketName}-${self:provider.stage}
 
 custom:
-  bucketName: ${opt:bucketName, 'home-assets-bucket'}
   corsOriginPattern: "*"
   prune:
     automatic: true
